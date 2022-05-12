@@ -1,7 +1,7 @@
 # EXPERIMENT-NO--05-Distance measurement using Ultrasonic sensor
 
 ## AIM: 
-To interface an ultrasonic to measure and scale the output voltage obtained to pressure applied 
+To measure the distance of the given obstacle using ultrasonicsenor(HC-SR04) 
  
 ### COMPONENTS REQUIRED:
 1.	ultrasonic sensor module HC-SR04
@@ -97,7 +97,7 @@ void loop()
 
 
 ### RESULTS
-thus the distance value measured by using ultrasonic by ardino.
+thus the distance value measured in "CM" using ultrasonic sensor.
 
 
 
