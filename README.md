@@ -1,7 +1,7 @@
 # EXPERIMENT-NO--05-Distance measurement using Ultrasonic sensor
 
 ## AIM: 
-To interface an FSR(force sensitive resistor) and scale the output voltage obtained to pressure applied 
+To interface an ultrasonic to measure and scale the output voltage obtained to pressure applied 
  
 ### COMPONENTS REQUIRED:
 1.	ultrasonic sensor module HC-SR04
@@ -55,8 +55,39 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 
 ### PROGRAM 
+```
+#define echoPin 9
+#define trigPin 10
+
+long duration;
+int distance;
+
+void setup()
+{
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2); // Wait for 1000 millisecond(s)
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin,HIGH);
+  distance = duration*0.0342/2;
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.print(" cm ");
+}
+```
+
 
 ### Distance vs measurement table 
+![image](https://user-images.githubusercontent.com/94530523/168079114-c0dbc93b-2f83-406d-a400-42b08bd7529a.png)
+
 
 
 
@@ -66,6 +97,8 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 
 ### RESULTS
+thus the distance value measured by using ultrasonic by ardino.
+
 
 
 
